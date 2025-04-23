@@ -55,17 +55,13 @@ const styles = {
   button: "bg-white p-4 m-1.5 rounded-lg items-center justify-center shadow-md flex-basis-1/5",
   buttonText: "text-base text-indigo-500",
   historyContainer: "mt-4",
-  footer: "p-4 text-center text-gray-500 glow"
+  footer: "p-4 text-center glow"
 }
 
 export default function Home() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([]);
   const { toast } = useToast();
-  const [themeColors, setThemeColors] = useState(['text-blue-500', 'text-red-500', 'text-yellow-500', 'text-green-500']);
-  const [currentColorIndex, setCurrentColorIndex] = useState(0);
-    const isDarkTheme = currentColorIndex >= 2;
-
 
   const handleButtonClick = (value: string) => {
     if (value === "C") {
@@ -88,9 +84,6 @@ export default function Home() {
     });
   };
 
-    const handleThemeChange = () => {
-        setCurrentColorIndex((prevIndex) => (prevIndex + 1) % themeColors.length);
-    };
 
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
@@ -155,10 +148,11 @@ export default function Home() {
           ))}
         </div>
       </div>
-        <footer className={styles.footer} style={{textShadow: '0 0 4px rgba(0,0,0,0.8)'}}>
+        <footer className={styles.footer} style={{textShadow: '0 0 4px rgba(0,0,0,0.8)', color: '#800080'}}>
             Copyrights@2025 <br />
             Developed By Sathish
         </footer>
     </div>
   );
 }
+
