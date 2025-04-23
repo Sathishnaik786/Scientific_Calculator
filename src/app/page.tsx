@@ -188,10 +188,11 @@ export default function Home() {
                     )}
                 </div>
             </div>
-            <footer className="p-4 text-center" style={{ color: '#FFD700', textShadow: '0 0 4px rgba(0,0,0,0.8)' }}>
+            <footer className="p-4 text-center" style={{ color: '#000000', textShadow: '0 0 4px rgba(0,0,0,0.8)' }}>
                 Copyrights@2025 <br />
                 Developed By Sathish
             </footer>
         </div>
     );
 }
+
