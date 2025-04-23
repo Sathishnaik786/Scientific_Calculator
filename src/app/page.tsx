@@ -47,15 +47,16 @@ const buttonValues = [
 ];
 
 const styles = {
-  header: "p-4 items-center",
-  appTitle: "text-4xl font-bold text-center",
+  header: "p-4 items-center justify-center",
+  appTitle: "text-4xl font-bold text-center bg-clip-text text-transparent",
   displayArea: "p-5 rounded-md m-4",
   inputText: "text-xl text-gray-800 text-left",
   resultText: "text-2xl font-bold text-gray-900 text-right",
   button: "bg-white p-4 m-1.5 rounded-lg items-center justify-center shadow-md flex-basis-1/5",
   buttonText: "text-base text-indigo-500",
-  historyContainer: "mt-4"
-}
+  historyContainer: "mt-4",
+  footer: "p-4 text-center",
+};
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -86,6 +87,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
       <div className={styles.header}>
+        {/*<h1 className={styles.appTitle}>SciMate</h1>*/}
       </div>
 
       <div className="w-full max-w-md p-4 rounded-lg border-2 border-double border-sky-500 shadow-2xl">
@@ -131,24 +133,39 @@ export default function Home() {
                   <path d="M22 12h-4l-3 5-3-5h-4"></path>
                 </svg>
               ) :
-                value === "/" ? <Divide size={20}/> :
-                  value === "*" ? <X size={20}/> :
-                    value === "-" ? <Minus size={20}/> :
-                      value === "+" ? <Plus size={20}/> :
-                        value === "%" ? <Percent size={20}/> :
-                          value === "π" ? <Pi size={20}/> :
-                            value === "log(" ? <Logs size={20}/> :
-                              value === "ln(" ? <Logs size={20}/> :
-                                value === "←" ? <Delete size={20}/> :
+                value === "/" ? <Divide size={20} /> :
+                  value === "*" ? <X size={20} /> :
+                    value === "-" ? <Minus size={20} /> :
+                      value === "+" ? <Plus size={20} /> :
+                        value === "%" ? <Percent size={20} /> :
+                          value === "π" ? <Pi size={20} /> :
+                            value === "log(" ? <Logs size={20} /> :
+                              value === "ln(" ? <Logs size={20} /> :
+                                value === "←" ? <Delete size={20} /> :
                                   value}
             </Button>
           ))}
         </div>
+
+        <div className={styles.historyContainer}>
+          <h2 className="text-xl font-semibold mb-2">History</h2>
+          {history.length > 0 ? (
+            <ul className="divide-y divide-border rounded-md border">
+              {history.map((item, index) => (
+                <li key={index} className="py-2 px-4">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-muted-foreground">No history yet</p>
+          )}
+        </div>
       </div>
-        <footer className="p-4 text-center text-purple-600 glow" style={{textShadow: '0 0 4px rgba(0,0,0,0.8)'}}>
-            Copyrights@2025 <br />
-            Developed By Sathish
-        </footer>
+      <footer className="p-4 text-center" style={{ color: '#yourColor', textShadow: '0 0 4px rgba(0,0,0,0.8)' }}>
+        Copyrights@2025 <br />
+        Developed By Sathish
+      </footer>
     </div>
   );
 }
