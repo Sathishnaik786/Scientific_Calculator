@@ -47,15 +47,14 @@ const buttonValues = [
 ];
 
 const styles = {
-  header: "p-4 flex items-center justify-between",
-  appTitle: "text-4xl font-bold text-white shadow-md",
+  header: "p-4 items-center",
+  appTitle: "text-4xl font-bold text-center",
   displayArea: "p-5 rounded-md m-4",
   inputText: "text-xl text-gray-800 text-left",
   resultText: "text-2xl font-bold text-gray-900 text-right",
   button: "bg-white p-4 m-1.5 rounded-lg items-center justify-center shadow-md flex-basis-1/5",
   buttonText: "text-base text-indigo-500",
-  historyContainer: "mt-4",
-  footer: "p-4 text-center glow"
+  historyContainer: "mt-4"
 }
 
 export default function Home() {
@@ -84,14 +83,12 @@ export default function Home() {
     });
   };
 
-
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
       <div className={styles.header}>
-        
       </div>
 
-      <div className="w-full max-w-md p-4">
+      <div className="w-full max-w-md p-4 rounded-lg border-2 border-double border-sky-500 shadow-2xl">
         <div className={styles.displayArea}>
           <Input
             type="text"
@@ -148,11 +145,10 @@ export default function Home() {
           ))}
         </div>
       </div>
-        <footer className={styles.footer} style={{textShadow: '0 0 4px rgba(0,0,0,0.8)', color: '#800080'}}>
+        <footer className="p-4 text-center text-purple-600 glow" style={{textShadow: '0 0 4px rgba(0,0,0,0.8)'}}>
             Copyrights@2025 <br />
             Developed By Sathish
         </footer>
     </div>
   );
 }
-
