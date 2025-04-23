@@ -1,4 +1,4 @@
-# NovaCalc - Static Scientific Calculator
+# NovaCalc - Scientific Calculator
 
 ## Overview
 
@@ -116,6 +116,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ## Credits
 
 -   Built with Next.js, Tailwind CSS, and Shadcn UI.
--   Icons from Lucide React.
-
-    
+-   Icons from Lucide React.# Scientific_Calculator
