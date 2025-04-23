@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs } from 'lucide-react';
+import { Delete, Divide, X, Minus, Plus, Percent, Pi, Logs } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 const calculate = (expression: string): string => {
     try {
         if (!expression) {
-            return "Error";
+            return "0"; // Return "0" for empty expression
         }
 
         expression = expression.replace(/π/g, "Math.PI");
@@ -71,7 +71,8 @@ export default function Home() {
     const { toast } = useToast();
 
     useEffect(() => {
-        setResult(calculate(input));
+        const calculatedResult = calculate(input);
+        setResult(calculatedResult === "Error" ? "0" : calculatedResult);
     }, [input]);
 
     const handleButtonClick = (value: string) => {
@@ -187,3 +188,4 @@ export default function Home() {
         </div>
     );
 }
+
