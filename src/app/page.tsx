@@ -97,10 +97,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
       <div className={styles.header}>
-        <h1 className={`${styles.appTitle} ${themeColors[0]} transition-colors duration-500`} style={{textShadow: '0 0 8px rgba(0,0,0,0.5)'}}>
-          S<span className={themeColors[1]}>c</span>i
-          M<span className={themeColors[2]}>a</span>te
-        </h1>
+        
         <Button onClick={handleThemeChange}>Change Theme</Button>
       </div>
 
@@ -168,4 +165,5 @@ export default function Home() {
     </div>
   );
 }
+
 
