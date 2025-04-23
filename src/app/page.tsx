@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs, SquareRoot, } from 'lucide-react';
+import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs,  } from 'lucide-react';
+import { Square as SquareRoot } from 'lucide-react';
 
 const calculate = (expression: string): string => {
   try {
