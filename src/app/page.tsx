@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Delete, Divide, X, Minus, Plus, Percent, Pi, Logs } from 'lucide-react';
+import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 const calculate = (expression: string): string => {
@@ -78,6 +78,7 @@ export default function Home() {
     const handleButtonClick = (value: string) => {
         if (value === "C") {
             setInput("");
+            setResult(initialResult);
         } else if (value === "←") {
             setInput((prevInput) => prevInput.slice(0, -1));
         } else if (value === "=") {
@@ -104,12 +105,17 @@ export default function Home() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
+        <div className="flex flex-col items-center justify-start min-h-screen" style={{ backgroundColor: '#0033A0', color: '#FFD700' }}>
             <div className={styles.header}>
-                {/*<h1 className={styles.appTitle}>SciMate</h1>*/}
+                <h1 className={styles.appTitle} style={{
+                    backgroundImage: 'linear-gradient(to right, #4285F4, #34A853, #FBBC05, #EA4335)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    textShadow: '0 0 8px rgba(0, 0, 0, 0.75)'
+                }}>NovaCalc</h1>
             </div>
 
-            <div className="w-full max-w-md p-4 rounded-lg border-2 border-double border-sky-500 shadow-2xl">
+            <div className="w-full max-w-md p-4 rounded-lg border-2 border-double" style={{ borderColor: '#FFD700', boxShadow: '0 0 10px #FFD700' }}>
                 <div className={styles.displayArea}>
                     <Input
                         type="text"
@@ -117,8 +123,9 @@ export default function Home() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         className={styles.inputText + " h-12"}
+                        style={{ color: '#1C1C1C' }}
                     />
-                    <p className={styles.resultText}>{result}</p>
+                    <p className={styles.resultText} style={{ color: '#1C1C1C' }}>{result}</p>
                 </div>
 
                 <div className="grid grid-cols-4 gap-2">
@@ -181,11 +188,10 @@ export default function Home() {
                     )}
                 </div>
             </div>
-            <footer className="p-4 text-center" style={{ color: '#yourColor', textShadow: '0 0 4px rgba(0,0,0,0.8)' }}>
+            <footer className="p-4 text-center" style={{ color: '#FFD700', textShadow: '0 0 4px rgba(0,0,0,0.8)' }}>
                 Copyrights@2025 <br />
                 Developed By Sathish
             </footer>
         </div>
     );
 }
-
