@@ -105,7 +105,7 @@ export default function Home() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-start min-h-screen" style={{ backgroundColor: '#0033A0', color: '#FFD700' }}>
+        <div className="flex flex-col items-center justify-start min-h-screen bg-white">
             <div className={styles.header}>
                 <h1 className={styles.appTitle} style={{
                     backgroundImage: 'linear-gradient(to right, #4285F4, #34A853, #FBBC05, #EA4335)',
@@ -115,7 +115,7 @@ export default function Home() {
                 }}>NovaCalc</h1>
             </div>
 
-            <div className="w-full max-w-md p-4 rounded-lg border-2 border-double" style={{ borderColor: '#FFD700', boxShadow: '0 0 10px #FFD700' }}>
+            <div className="w-full max-w-md p-4 rounded-lg border-2 border-double" style={{ borderColor: '#0033A0', boxShadow: '0 0 10px #FFD700' }}>
                 <div className={styles.displayArea}>
                     <Input
                         type="text"
