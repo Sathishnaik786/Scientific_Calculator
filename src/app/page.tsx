@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs, SquareRoot } from 'lucide-react';
+import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 const calculate = (expression: string): string => {
@@ -115,16 +115,32 @@ export default function Home() {
               )}
               onClick={() => handleButtonClick(value)}
             >
-              {value === "sqrt(" ? <SquareRoot/> :
-                value === "/" ? <Divide/> :
-                  value === "*" ? <X/> :
-                    value === "-" ? <Minus/> :
-                      value === "+" ? <Plus/> :
-                        value === "%" ? <Percent/> :
-                          value === "π" ? <Pi/> :
-                            value === "log(" ? <Logs/> :
-                              value === "ln(" ? <Logs/> :
-                                value === "←" ? <Delete/> :
+              {value === "sqrt(" ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M2 12h20" />
+                  <path d="m8 8-6 4 6 4" />
+                  <path d="M8 12H5" />
+                </svg>
+              ) :
+                value === "/" ? <Divide size={20}/> :
+                  value === "*" ? <X size={20}/> :
+                    value === "-" ? <Minus size={20}/> :
+                      value === "+" ? <Plus size={20}/> :
+                        value === "%" ? <Percent size={20}/> :
+                          value === "π" ? <Pi size={20}/> :
+                            value === "log(" ? <Logs size={20}/> :
+                              value === "ln(" ? <Logs size={20}/> :
+                                value === "←" ? <Delete size={20}/> :
                                   value}
             </Button>
           ))}
