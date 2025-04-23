@@ -46,21 +46,26 @@ const buttonValues = [
   "π", "e", "%",
 ];
 
+const googleColors = ['text-blue-500', 'text-red-500', 'text-yellow-500', 'text-green-500'];
+
 const styles = {
-  header: "p-4 bg-indigo-500 items-center",
-  appTitle: "text-2xl font-bold text-white",
-  displayArea: "p-5 bg-gray-200 rounded-md m-4",
+  header: "p-4 flex items-center justify-between",
+  appTitle: "text-4xl font-bold text-white shadow-md",
+  displayArea: "p-5 rounded-md m-4",
   inputText: "text-xl text-gray-800 text-left",
   resultText: "text-2xl font-bold text-gray-900 text-right",
   button: "bg-white p-4 m-1.5 rounded-lg items-center justify-center shadow-md flex-basis-1/5",
   buttonText: "text-base text-indigo-500",
-  historyContainer: "mt-4"
+  historyContainer: "mt-4",
+  footer: "p-4 text-center text-gray-500 glow"
 }
 
 export default function Home() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([]);
   const { toast } = useToast();
+  const [themeColors, setThemeColors] = useState(googleColors);
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
   const handleButtonClick = (value: string) => {
     if (value === "C") {
@@ -83,10 +88,18 @@ export default function Home() {
     });
   };
 
+    const handleThemeChange = () => {
+        setCurrentColorIndex((prevIndex) => (prevIndex + 1) % themeColors.length);
+    };
+
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-start min-h-screen">
       <div className={styles.header}>
-        <h1 className={styles.appTitle}>SciMate</h1>
+      <h1 className={`${styles.appTitle} ${themeColors[0]} transition-colors duration-500`} style={{textShadow: '0 0 8px rgba(0,0,0,0.5)'}}>
+          S<span className={themeColors[1]}>c</span>i
+          M<span className={themeColors[2]}>a</span>te
+        </h1>
+        <Button onClick={handleThemeChange}>Change Theme</Button>
       </div>
 
       <div className="w-full max-w-md p-4">
@@ -127,9 +140,9 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M2 12h20" />
-                  <path d="m8 8-6 4 6 4" />
-                  <path d="M8 12H5" />
+                  <path d="M2 9s.5-3 5-3 5 3 5 3"></path>
+                  <path d="M7 6v12"></path>
+                  <path d="M22 12h-4l-3 5-3-5h-4"></path>
                 </svg>
               ) :
                 value === "/" ? <Divide size={20}/> :
@@ -161,6 +174,10 @@ export default function Home() {
           )}
         </div>
       </div>
+        <footer className={styles.footer} style={{textShadow: '0 0 4px rgba(0,0,0,0.8)'}}>
+            Copyrights@2025 <br />
+            Developed By Sathish with glow UI
+        </footer>
     </div>
   );
 }
