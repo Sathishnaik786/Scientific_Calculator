@@ -160,21 +160,6 @@ export default function Home() {
             </Button>
           ))}
         </div>
-
-        <div className={styles.historyContainer}>
-          <h2 className="text-xl font-semibold mb-2">History</h2>
-          {history.length > 0 ? (
-            <ul className="divide-y divide-border rounded-md border">
-              {history.map((item, index) => (
-                <li key={index} className="py-2 px-4">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-muted-foreground">No history yet</p>
-          )}
-        </div>
       </div>
         <footer className={styles.footer} style={{textShadow: '0 0 4px rgba(0,0,0,0.8)'}}>
             Copyrights@2025 <br />
@@ -183,3 +168,4 @@ export default function Home() {
     </div>
   );
 }
+
