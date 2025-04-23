@@ -66,6 +66,8 @@ export default function Home() {
   const { toast } = useToast();
   const [themeColors, setThemeColors] = useState(googleColors);
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
+    const isDarkTheme = currentColorIndex >= 2;
+
 
   const handleButtonClick = (value: string) => {
     if (value === "C") {
@@ -93,9 +95,9 @@ export default function Home() {
     };
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
       <div className={styles.header}>
-      <h1 className={`${styles.appTitle} ${themeColors[0]} transition-colors duration-500`} style={{textShadow: '0 0 8px rgba(0,0,0,0.5)'}}>
+        <h1 className={`${styles.appTitle} ${themeColors[0]} transition-colors duration-500`} style={{textShadow: '0 0 8px rgba(0,0,0,0.5)'}}>
           S<span className={themeColors[1]}>c</span>i
           M<span className={themeColors[2]}>a</span>te
         </h1>
@@ -176,7 +178,7 @@ export default function Home() {
       </div>
         <footer className={styles.footer} style={{textShadow: '0 0 4px rgba(0,0,0,0.8)'}}>
             Copyrights@2025 <br />
-            Developed By Sathish with glow UI
+            Developed By Sathish
         </footer>
     </div>
   );

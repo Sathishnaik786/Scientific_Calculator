@@ -8,8 +8,8 @@ body {
 
 @layer base {
   :root {
-    --background: 220 20% 96%; /* Light gray */
-    --foreground: 220 20% 4%; /* Dark gray */
+    --background: 0 0% 100%; /* white */
+    --foreground: 0 0% 0%; /* black */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -28,18 +28,18 @@ body {
     --input: 220 20% 89.8%;
     --ring: 220 20% 3.9%;
     --radius: 0.5rem;
-    --sidebar-background: 220 20% 98%;
-    --sidebar-foreground: 220 20% 26.1%;
-    --sidebar-primary: 220 20% 10%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 235 53% 37%; /* Indigo */
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 220 20% 95.9%;
-    --sidebar-accent-foreground: 220 20% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 165 100% 35%; /* Teal */
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 20% 89.8%;
+    --sidebar-ring: 220 20% 3.9%;
   }
   .dark {
-    --background: 220 20% 4%; /* Dark gray */
-    --foreground: 220 20% 96%; /* Light gray */
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* white */
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
@@ -62,14 +62,14 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 220 20% 10%;
-    --sidebar-foreground: 220 20% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 15.9%;
-    --sidebar-accent-foreground: 220 20% 95.9%;
-    --sidebar-border: 220 20% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+      --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 235 53% 98%; /* Indigo */
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 165 100% 35%; /* Teal */
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 20% 14.9%;
+    --sidebar-ring: 220 20% 83.1%;
   }
 }
 
@@ -82,3 +82,4 @@ body {
 .glow {
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
 }
+
