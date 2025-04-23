@@ -46,8 +46,6 @@ const buttonValues = [
   "π", "e", "%",
 ];
 
-const googleColors = ['text-blue-500', 'text-red-500', 'text-yellow-500', 'text-green-500'];
-
 const styles = {
   header: "p-4 flex items-center justify-between",
   appTitle: "text-4xl font-bold text-white shadow-md",
@@ -64,7 +62,7 @@ export default function Home() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([]);
   const { toast } = useToast();
-  const [themeColors, setThemeColors] = useState(googleColors);
+  const [themeColors, setThemeColors] = useState(['text-blue-500', 'text-red-500', 'text-yellow-500', 'text-green-500']);
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
     const isDarkTheme = currentColorIndex >= 2;
 
@@ -98,7 +96,6 @@ export default function Home() {
     <div className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
       <div className={styles.header}>
         
-        <Button onClick={handleThemeChange}>Change Theme</Button>
       </div>
 
       <div className="w-full max-w-md p-4">
