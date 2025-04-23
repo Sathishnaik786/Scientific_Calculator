@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs, Root, природные } from 'lucide-react';
+import { Copy, Delete, Divide, X, Minus, Plus, Percent, Pi, Logs, SquareRoot, } from 'lucide-react';
 
 const calculate = (expression: string): string => {
   try {
@@ -103,7 +103,7 @@ export default function Home() {
                 }`}
               onClick={() => handleButtonClick(value)}
             >
-              {value === "sqrt(" ? <Root/> :
+              {value === "sqrt(" ? <SquareRoot/> :
                 value === "/" ? <Divide/> :
                   value === "*" ? <X/> :
                     value === "-" ? <Minus/> :
@@ -111,7 +111,7 @@ export default function Home() {
                         value === "%" ? <Percent/> :
                           value === "π" ? <Pi/> :
                             value === "log(" ? <Logs/> :
-                              value === "ln(" ? <природные/> :
+                              value === "ln(" ? <Logs/> :
                                 value === "←" ? <Delete/> :
                                   value}
             </Button>
@@ -136,4 +136,3 @@ export default function Home() {
     </div>
   );
 }
-
